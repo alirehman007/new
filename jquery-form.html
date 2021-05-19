@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery</title>
+	<!-- script src="js/jquery.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.15.2-web">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+	
+			<table class="table ">
+				<tr>
+					<td>
+						Name
+					</td>
+					<td>
+						<input type="text" name="name" id="a1" required="" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Email
+					</td>
+					<td>
+						<input type="email" name="email" id="a2" required="" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Contact No
+					</td>
+					<td>
+						<input type="number" name="contact" id="a3" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						project type
+					</td>
+					<td id="">
+						<input type="text" name="project" required="" id="a4" class="form-control">
+					</td>
+				</tr>
+				<!-- <tr>
+					<td>
+						DELETE
+					</td>
+					<td id="">
+						<input type="text" name="project" required="" id="a5" class="form-control">
+					</td>
+				</tr> -->
+				<tr>
+					
+					<td>
+						<input type="button" name="name" value="Submit" id="add" class="btn btn-primary">
+					</td>
+				</tr>
+			</table>
+		
+		<div>
+			<table class="blue" id="">
+				<tr>
+					<th id="">Name</th> 
+					<th id="">Email</th> 
+					<th id="">Contact</th> 
+					<th id="">Project type</th> 
+					<th id="">ACTION</th> 
+				</tr>
+				<tr>
+
+					<td id="c1"></td>
+					<td id="c2"></td>
+					<td id="c3"></td>
+					<td id="c4"></td>
+					<td id="c5"></td>
+				
+				</tr>
+			</table>
+		</div>
+
+
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#add").click(function(){
+				var name=$("#a1").val();
+				var email=$("#a2").val();
+				var contact=$("#a3").val();
+				var project=$("#a4").val();
+				var ACTION=$("#a5").val();
+
+				if (name==""||email==""||contact==""||project==""|contact=="" ) {
+					$("#error").html("<p>This is required field </p>");
+				}
+				else{
+					$("#error").html("");
+					$("#table_show").removeClass("blue")
+					$("#table_show").addClass("table table-bordered");
+
+					$("#c1").html(name);
+					$("#c2").html(email);
+					$("#c3").html(contact);
+					$("#c4").html(project);
+					$("#c5").html(ACTION);
+
+$("#add").click(function(){
+				$("#a1").clone().appendTo("#c1");
+				$("#a2").clone().appendTo("#c2 ");
+				$("#a3").clone().appendTo("#c3 ");
+				$("#a4").clone().appendTo("#c4 ");
+				$("#a5").clone().appendTo("#c5 ");
+})
+
+}
+			})
+		})
+		 $('body').on('click','#a5',function() {
+      $(this).parents('tr').remove();
+    });
+
+	</script>
+
+
+	
+
+</body>
+</html>
